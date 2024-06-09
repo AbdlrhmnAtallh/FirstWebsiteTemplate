@@ -1,0 +1,93 @@
+.headerSection{
+    padding: 23px 0;
+    opacity: 1;
+}
+nav{
+    height: 60px;
+    width: 100%;
+    height: 100%;
+}
+ul{
+    list-style-type:none;
+    display: inline-flex;
+    margin-block:initial
+}
+.logoPic{
+    height: 40%;
+   
+}
+li{
+    margin: 10px;
+}
+.logoNameli{
+    height: 100px;
+    width: 100px;
+    margin-left:450px;
+    margin-right:533px
+}
+svg{
+    width:21px;
+    height:21px
+}
+
+
+@media (max-width: 1200px) {
+    .logoNameli {
+        margin-left: 300px;
+        margin-right: 300px;
+    }
+}
+
+@media (max-width: 992px) {
+    .logoNameli {
+        margin-left: 200px;
+        margin-right: 200px;
+    }
+}
+
+@media (max-width: 768px) {
+    ul {
+        display: inline-flex;
+        text-align: center;
+    }
+
+    li {
+        
+    }
+
+    .logoNameli {
+        width: 80px;
+        height: 80px;
+        margin-left: 90px;
+        margin-right: 80px;
+    }
+}
+
+@media (max-width: 576px) {
+    .headerSection {
+        padding: 15px 0;
+    }
+
+    .logoPic {
+        height: 30%;
+    }
+
+    svg {
+        width: 18px;
+        height: 18px;
+    }
+
+    .logoNameli {
+        width: 80px;
+        height: 80px;
+        margin-left: 90px;
+        margin-right: 80px;
+    }
+    .menueIconeli{
+        margin-left: 4px;
+    }
+
+    ul {
+        padding-left: 10px;
+    }
+}
