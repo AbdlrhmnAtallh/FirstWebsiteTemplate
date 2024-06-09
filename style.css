@@ -91,3 +91,40 @@ svg{
         padding-left: 10px;
     }
 }
+
+/* ### End top nav ############# */
+
+
+
+/* ### carousel Section ############# */
+.carouselSection {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+}
+
+.carouselContainer {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+
+.carouselItem {
+    min-width: 100%;
+    box-sizing: border-box;
+}
+
+.carouselItem img {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover; /* Ensures the image covers the container without distortion */
+    max-height: 100vh; /* Ensures the image does not exceed the viewport height */
+}
+
+/* Optional: Additional styles for the images */
+.carouselItem img {
+    border-radius: 10px; /* Optional: rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional: shadow effect */
+}
+
+
