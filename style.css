@@ -1,6 +1,19 @@
+
+
+/* ///############## header section ###############/// */
+/* ///############## header section ###############/// */
+
 .headerSection{
     padding: 23px 0;
     opacity: 1;
+    height: 40px;
+}
+
+/* ///############## nav ###############/// */
+/* ///############## nav ###############/// */
+
+.headerNav{
+    height: 40px;
 }
 nav{
     height: 60px;
@@ -22,13 +35,42 @@ li{
 .logoNameli{
     height: 100px;
     width: 100px;
-    margin-left:450px;
-    margin-right:533px
+    margin-left:500px;
+    margin-right:440px
 }
 svg{
     width:21px;
     height:21px
 }
+/* ///############## end nav ###############/// */
+/* ///############## end nav ###############/// */
+
+/* ////##       hr            ##///  */
+/* ////##       hr            ##///  */
+
+
+.headerSectionhr {
+    border: 0;
+    height: 1px; 
+    background: linear-gradient(to left, red, yellow, green, white, black);
+    background-size: 300% 100%; /* Adjust size to control the speed and smoothness */
+    animation: gradientAnimation 5s ease infinite; /* Animation duration and easing */
+    margin: 20px 0; /* Optional: Add some spacing */
+}
+@keyframes gradientAnimation {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+/* ///##            end hr           ##/// */
+/* ///##            end hr           ##/// */
 
 
 @media (max-width: 1200px) {
@@ -49,10 +91,6 @@ svg{
     ul {
         display: inline-flex;
         text-align: center;
-    }
-
-    li {
-        
     }
 
     .logoNameli {
@@ -92,19 +130,25 @@ svg{
     }
 }
 
-/* ### End top nav ############# */
+/* ///############## end header section ###############/// */
+/* ///############## end header section ###############/// */
 
 
 
-/* ### carousel Section ############# */
+
+/* ///############## carousel Section ###############/// */
+/* ///############## carousel Section ###############/// */
+
 .carouselSection {
     width: 100%;
     overflow: hidden;
     position: relative;
+    padding-top:10px
 }
 
 .carouselContainer {
     display: flex;
+    flex-direction: row-reverse;
     transition: transform 0.5s ease-in-out;
 }
 
@@ -127,4 +171,108 @@ svg{
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional: shadow effect */
 }
 
+.carouselText {
+    position: absolute;
+    bottom: 20px; /* Adjust the position of the text as needed */
+    right: 20px; /* Adjust the position of the text as needed */
+    background: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+    color: white;
+    padding: 10px;
+    border-radius: 5px; /* Optional: rounded corners */
+    font-size: 16px; /* Adjust font size as needed */
+    direction: rtl; /* Ensure text direction is RTL */
+    margin: 10px;
+}
 
+
+/* ///############## carousel Section:: social-icons ###############/// */
+/* ///############## carousel Section:: social-icons ###############/// */
+
+.socialIcons {
+    display: inline-flex;
+    float: left;
+    margin-top: 30px;
+    margin-left: 15px;
+}
+
+.first-text {
+    display: inline-flex;
+}
+
+.social-buttons {
+    width: 50px; /* Adjust this value to change the button size */
+    height: 50px; /* Adjust this value to change the button size */
+    margin-left: 45px;
+}
+
+.facebook-icone,
+.instagram-icone,
+.tiktok-icone,
+.whatsapp-icone {
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%; /* Makes the background circular */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.facebook-icone {
+    background-color: white;
+    color: blue;
+}
+
+.instagram-icone {
+    background-color: #E1306C; /* Instagram's color */
+    color: white;
+}
+
+.tiktok-icone {
+    background-color: #69C9D0; /* TikTok's color */
+    color: white;
+}
+
+.whatsapp-icone {
+    background-color: #25D366; /* WhatsApp's color */
+    color: white;
+}
+
+.facebook-icone svg,
+.instagram-icone svg,
+.tiktok-icone svg,
+.whatsapp-icone svg {
+    width: 30px; /* Adjust this value to change the icon size */
+    height: 30px; /* Adjust this value to change the icon size */
+    stroke: none;
+}
+.facebook-icone svg{
+    width: 45px;
+    height: 45px;
+}
+
+.facebook-icone:hover,
+.instagram-icone:hover,
+.tiktok-icone:hover,
+.whatsapp-icone:hover {
+    background-color: white;
+    transform: scale(1.2); /* Enlarge the icon on hover */
+    transition: transform 0.3s ease, background-color 0.3s ease; /* Smooth transition effect */
+}
+
+/* .facebook-icone:hover svg {
+    color: white;
+    background-color: blue;
+} */
+
+.instagram-icone:hover svg {
+    color: #E1306C;
+}
+
+.tiktok-icone:hover svg {
+    color: #69C9D0;
+}
+
+.whatsapp-icone:hover svg {
+    color: #25D366;
+}

@@ -9,3 +9,8 @@ function showNextImage() {
 }
 
 setInterval(showNextImage, 3000); // Change image every 3 seconds
+
+
+
+  
+  
