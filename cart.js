@@ -23,7 +23,7 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 function sendOrderWhatsApp(cart) {
-    let phoneNumber = "1234567890";  // Replace with your WhatsApp number
+    let phoneNumber = "+201064845771";  // Replace with your WhatsApp number
     let message = "Here is my order:\n\n";
 
     cart.forEach(item => {
