@@ -1,22 +1,105 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+}
 
+*, *::before, *::after {
+    box-sizing: inherit;
+}
+
+/* Set up basic typography */
+body {
+    font-family: 'Amiri', serif;
+    font-size: 16px;
+    line-height: 1.5;
+    color: #333;
+    background-color: #f9f9f9;
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
+
+header, main, footer {
+    padding: 1rem;
+    margin: 0 auto;
+    max-width: 1200px; 
+}
+
+
+h1 {
+    font-size: 2rem;
+    margin: 0.5rem 0;
+}
+
+p {
+    margin: 1rem 0;
+}
+.brand-name{
+    color: cornflowerblue;
+    font-weight: 900;
+    font-size: larger;
+    font-family: system-ui ;
+    font-variant: petite-caps;
+}
+.carouseText{
+    color: darkslategray;
+}
+
+/* Responsive media queries */
+@media (max-width: 768px) {
+    body {
+        font-size: 14px;
+    }
+
+    h1 {
+        font-size: 1.5rem;
+    }
+
+    header, main, footer {
+        padding: 0.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    body {
+        font-size: 12px;
+    }
+
+    h1 {
+        font-size: 1.2rem;
+    }
+}
+
+/* Basic link styles */
+a {
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
 
 /* ///############## header section ###############/// */
 /* ///############## header section ###############/// */
 
 .headerSection{
-    padding: 23px 0;
     opacity: 1;
-    height: 40px;
+    height: fit-content;
+    background-color:white;
 }
 
 /* ///############## nav ###############/// */
 /* ///############## nav ###############/// */
 
 .headerNav{
-    height: 40px;
+    padding-top: 25px;
+    padding-bottom: 0px;
 }
 nav{
-    height: 60px;
     width: 100%;
     height: 100%;
 }
@@ -25,7 +108,7 @@ nav{
     display: inline-flex;
     margin-block:initial;
     height: 100%;
-    
+    width: 100%;
 }
 .logoPic{
     height: 90%;
@@ -34,15 +117,18 @@ nav{
 li{
     margin: 10px;
 }
+.menueIconeli{
+    margin-right: -10px;
+}
 .logoNameli{
     width: 200px;
-    margin-top:-8px;
+    margin-top:-2px;
     margin-left:400px;
     margin-right:450px
 }
 svg{
-    width:21px;
-    height:21px
+    width:25px;
+    height:25px
 }
 /* ///############## end nav ###############/// */
 /* ///############## end nav ###############/// */
@@ -54,10 +140,10 @@ svg{
 .headerSectionhr {
     border: 0;
     height: 1px; 
+    width: 100%;
     background: linear-gradient(to left, red, yellow, green, white, black);
     background-size: 300% 100%; /* Adjust size to control the speed and smoothness */
     animation: gradientAnimation 5s ease infinite; /* Animation duration and easing */
-    margin: 20px 0; /* Optional: Add some spacing */
 }
 @keyframes gradientAnimation {
     0% {
@@ -74,55 +160,107 @@ svg{
 /* ///##            end hr           ##/// */
 /* ///##            end hr           ##/// */
 
-/* 
+
 @media (max-width: 1200px) {
     .logoNameli {
-        margin-left: 300px;
-        margin-right: 300px;
+        width: 160px;
+        height: 30px;
+        margin-left: 360px;
+        margin-right: 340px;
+        margin-top:5px;
+    }
+    svg {
+        width: 24px;
+        height: 24px;
+    }
+    .ul-nav {
+        height: 100%;
+        width:100%;
+    }
+    .headerSection {
+        padding: 15px 0;
+        
+    }
+    .headerNav{
+        padding-top:0px;
+    }
+    .menueIconeli{
+        margin-right: -10px;
     }
 }
 
 @media (max-width: 992px) {
+    .headerSection {
+        padding: 15px 0;
+        
+    }
+    
+    svg {
+        width: 20px;
+        height: 20px;
+    }
+    
     .logoNameli {
-        margin-left: 200px;
-        margin-right: 200px;
+        width: 150px;
+        height: 30px;
+        margin-left: 300px;
+        margin-right: 250px;
+        margin-top:5px;
+    }
+    .menueIconeli{
+        margin-right: -10px;
+    }
+    .headerNav{
+        padding-top:0px;
+    }
+
+    .ul-nav {
+        height: 100%;
+        width:100%;
     }
 }
 
-@media (max-width: 768px) {
-    ul {
-        display: inline-flex;
-        text-align: center;
+@media (max-width: 769px) {
+    .headerSection {
+        padding: 15px 0;
+        
+    }
+    
+    svg {
+        width: 20px;
+        height: 20px;
+    }
+    
+    .logoNameli {
+        width: 140px;
+        height: 30px;
+        margin-left: 230px;
+        margin-right: 230px;
+        margin-top:5px;
+    }
+    .menueIconeli{
+        margin-right: -10px;
+    }
+    .headerNav{
+        padding-top:0px;
     }
 
-    .logoNameli {
-        width: 80px;
-        height: 80px;
-        margin-left: 90px;
-        margin-right: 80px;
+    .ul-nav {
+        height: 100%;
     }
-} */
+} 
 
 @media (max-width: 576px) {
     .headerSection {
         padding: 15px 0;
         
     }
-    .headerNav{
-        /* it needs to take a specific height for mob screen */
-    }
-    .logoPic {
-        
-    }
-
+    
     svg {
         width: 18px;
         height: 18px;
     }
-    .logoName{
-       
-    }
-
+    
     .logoNameli {
         width: 120px;
         height: 30px;
@@ -133,16 +271,29 @@ svg{
     .menueIconeli{
         margin-right: -10px;
     }
+    .headerNav{
+        padding-top:0px;
+    }
 
     .ul-nav {
-        /* padding-left: 10px; */
         height: 100%;
     }
+    .top-nav{
+        width: 100%;
+    }
 }
+@media only screen and (-webkit-min-device-pixel-ratio: 2),
+       only screen and (min--moz-device-pixel-ratio: 2),
+       only screen and (-o-min-device-pixel-ratio: 2/1),
+       only screen and (min-device-pixel-ratio: 2),
+       only screen and (min-resolution: 192dpi),
+       only screen and (min-resolution: 2dppx)
+    {
+
+    }
 
 /* ///############## end header section ###############/// */
 /* ///############## end header section ###############/// */
-
 
 
 
@@ -153,46 +304,10 @@ svg{
     width: 100%;
     overflow: hidden;
     position: relative;
-    padding-top:10px
-}
-
-.carouselContainer {
-    display: flex;
-    flex-direction: row-reverse;
-    transition: transform 0.5s ease-in-out;
-}
-
-.carouselItem {
-    min-width: 100%;
-    box-sizing: border-box;
-}
-
-.carouselItem img {
-    width: 100%;
-    height: auto;
-    display: block;
-    object-fit: cover; /* Ensures the image covers the container without distortion */
-    max-height: 100vh; /* Ensures the image does not exceed the viewport height */
-}
-
-/* Optional: Additional styles for the images */
-.carouselItem img {
-    border-radius: 10px; /* Optional: rounded corners */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional: shadow effect */
-}
-
-.carouselText {
-    position: absolute;
-    bottom: 20px; /* Adjust the position of the text as needed */
-    right: 20px; /* Adjust the position of the text as needed */
-    background: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
-    color: white;
-    padding: 10px;
-    border-radius: 5px; /* Optional: rounded corners */
-    font-size: 16px; /* Adjust font size as needed */
-    direction: rtl; /* Ensure text direction is RTL */
+    padding-top:10px;
     margin: 10px;
 }
+
 
 
 /* ///############## carousel Section:: social-icons ###############/// */
@@ -207,6 +322,7 @@ svg{
 
 .first-text {
     display: inline-flex;
+    padding-right: 20px;
 }
 
 .social-buttons {
@@ -222,7 +338,7 @@ svg{
     display: inline-block;
     width: 100%;
     height: 100%;
-    border-radius: 50%; /* Makes the background circular */
+    border-radius: 50%; 
     display: flex;
     align-items: center;
     justify-content: center;
@@ -248,12 +364,12 @@ svg{
     color: white;
 }
 
-.facebook-icone svg,
+
 .instagram-icone svg,
 .tiktok-icone svg,
 .whatsapp-icone svg {
-    width: 30px; /* Adjust this value to change the icon size */
-    height: 30px; /* Adjust this value to change the icon size */
+    width: 30px; 
+    height: 30px;
     stroke: none;
 }
 .facebook-icone svg{
@@ -270,10 +386,6 @@ svg{
     transition: transform 0.3s ease, background-color 0.3s ease; /* Smooth transition effect */
 }
 
-/* .facebook-icone:hover svg {
-    color: white;
-    background-color: blue;
-} */
 
 .instagram-icone:hover svg {
     color: #E1306C;
@@ -285,4 +397,132 @@ svg{
 
 .whatsapp-icone:hover svg {
     color: #25D366;
+}
+
+
+/* /////////// ##      carouselContainer      ## //////////////////*/
+/* /////////// ##      carouselContainer      ## //////////////////*/
+
+.carouselContainer {
+    display: flex;
+    flex-direction: row-reverse;
+    transition: transform 0.5s ease-in-out;
+}
+
+.carouselItem {
+    min-width: 100%;
+    box-sizing: border-box;
+}
+
+.carouselItem img {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover; /* Ensures the image covers the container without distortion */
+    max-height: 100vh; /* Ensures the image does not exceed the viewport height */
+}
+
+.carouselItem img {
+    border-radius: 10px; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+}
+
+.carouselText {
+    position: absolute;
+    bottom: 20px; /* Adjust the position of the text as needed */
+    right: 20px; /* Adjust the position of the text as needed */
+    background: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+    color: white;
+    padding: 10px;
+    border-radius: 5px; /* Optional: rounded corners */
+    font-size: 16px; /* Adjust font size as needed */
+    direction: rtl; /* Ensure text direction is RTL */
+    margin: 10px;
+}
+
+
+@media (max-width: 575.98px) {
+    .social-buttons {
+        width: 35px; 
+        height: 35px;
+        margin-left: 30px;
+    }
+    .instagram-icone svg,
+    .tiktok-icone svg,
+    .whatsapp-icone svg {
+    width: 20px; 
+    height: 20px;
+    stroke: none;
+    }
+    .facebook-icone svg{
+    width: 35px;
+    height: 35px;
+    }
+    .socialIcons{
+        margin-top: 0px;
+        margin-left: 0px;
+    }
+  }
+  
+  @media (min-width: 576px) and (max-width: 767.98px) {
+    
+  }
+  
+  /* Medium devices (tablets, 768px and up) */
+  @media (min-width: 768px) and (max-width: 991.98px) {
+    
+  }
+  
+  /* Large devices (desktops, 992px and up) */
+  @media (min-width: 992px) and (max-width: 1199.98px) {
+    
+  }
+  
+  /* Extra large devices (large desktops, 1200px and up) */
+  @media (min-width: 1200px) {
+   
+  }
+
+/*#####/// Products //////#########*/
+/*#####/// Products //////#########*/
+.products-area {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 20px;
+}
+
+.card {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    width: calc(25% - 10px); /* 4 cards per row with 10px total margin */
+    margin: 5px;
+    text-align: center;
+    font-family: Arial, sans-serif;
+}
+
+@media (max-width: 575.98px){
+    .card{
+        width: calc(50% - 10px); /* 4 cards per row with 10px total margin */
+        margin: 5px;
+    }
+}
+
+.price {
+    color: grey;
+    font-size: 22px;
+}
+
+.card button {
+    border: none;
+    outline: 0;
+    padding: 12px;
+    color: white;
+    background-color: #000;
+    text-align: center;
+    cursor: pointer;
+    width: 100%;
+    font-size: 18px;
+}
+
+.card button:hover {
+    opacity: 0.7;
 }
