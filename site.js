@@ -20,7 +20,7 @@ fetch('products.json')
             const card = document.createElement('div');
             card.classList.add('card');
             card.innerHTML = `
-                <img src="${product.ImagePath1}" alt="picture not found" style="width:100%">
+                <img src="images/${product.ImagePath1}" alt="picture not found" style="width:100%">
                 <h1>${product.Name}</h1>
                 <p class="price">$${product.Price}</p>
                 <p>${product.Description}</p>
