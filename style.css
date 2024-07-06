@@ -654,3 +654,50 @@ svg{
         order: 1;
     }
 }
+
+@media(max-width: 359px){
+
+    .card h3{
+        font-size: 13px;
+        line-height: 15px;
+        height: 32px;
+    }
+
+    .price{
+        text-align: center;
+        min-height: 20px;
+        padding-top: 5px;
+        font-size: 18px;
+        line-height: 20px;
+    }
+    .end-card{
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+
+    .card button{
+        order: 2;
+        margin-top: 10px;
+        display: inline-block;
+        max-width: inherit;
+        vertical-align: baseline;
+        position: relative;
+        min-height: 31px;
+        width: 100%;
+        
+    }
+    .heart{
+        margin-left: 20px;
+        margin-right: 13px;
+        order: 1;
+    }
+    .show-svg{
+        margin-left: -10px;
+        margin-right: 35px;
+        order: 1;
+    }
+    .child-card{
+        margin: 0px;
+    }
+}
