@@ -512,6 +512,9 @@ svg{
 .card p,svg{
     color: #56b0f2;
 }
+.card a{
+    color: black;
+}
 
 .card span {
     font-weight: 900;
@@ -565,12 +568,6 @@ svg{
 
 
 
-@media (max-width: 575.98px){
-    .card{
-        width: calc(50% - 10px); /* 4 cards per row with 10px total margin */
-        margin: 5px;
-    }
-}
 
 .cart-left {
     transform: scaleX(-1);
@@ -606,6 +603,10 @@ svg{
 }
 
 @media (max-width: 575.98px) {
+    .card{
+        width: calc(50% - 10px); /* 4 cards per row with 10px total margin */
+        margin: 5px;
+    }
     .card img {
         max-height: 150px;
         max-width: 100%;
@@ -640,7 +641,7 @@ svg{
         position: relative;
         min-height: 31px;
         width: 100%;
-        margin-right: 10px;
+        
     }
     .heart{
         margin-left: 20px;
