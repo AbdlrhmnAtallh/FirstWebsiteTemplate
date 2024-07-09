@@ -590,7 +590,7 @@ svg{
     padding-top: 3px;
     padding-bottom: 6px;
     border-radius: 5px;
-    background-color: #f9f9f9;
+    /* background-color: #f9f9f9; */ 
     color: #56b0f2;
 }
 
@@ -611,12 +611,32 @@ svg{
         max-height: 150px;
         max-width: 100%;
     }
+    .cart-left{
+        height: 15px;
+        width:15px;
+    }
+    .card button{
+        font-size: 15px;
+    }
+    .heart{
+        height: 20px;
+        width:20px;
+    }
+    .show-svg{
+        height: 25px;
+        width:25px
+    }
 }
 @media(max-width: 600px) and (min-width: 360px){
+    .card{
+        width: calc(50% - 10px); /* 4 cards per row with 10px total margin */
+        margin: 5px;
+    }
     .card h3{
-        font-size: 13px;
-        line-height: 15px;
-        height: 32px;
+        font-size: 16px;
+        line-height: 19px;
+        height: 35px;
+        font-weight: 100;
     }
 
     .price{
@@ -630,6 +650,9 @@ svg{
         display: flex;
         flex-direction: row;
         flex-wrap: wrap;
+        align-items: center;
+        text-align: center;
+        justify-content: center;
     }
 
     .card button{
@@ -641,7 +664,7 @@ svg{
         position: relative;
         min-height: 31px;
         width: 100%;
-        
+        text-align: center;
     }
     .heart{
         margin-left: 20px;
@@ -690,6 +713,107 @@ svg{
     .heart{
         margin-left: 20px;
         margin-right: 13px;
+        order: 1;
+    }
+    .show-svg{
+        margin-left: -10px;
+        margin-right: 35px;
+        order: 1;
+    }
+    .child-card{
+        margin: 0px;
+    }
+}
+
+@media (max-width:750px) and (min-width:601px){
+
+    .card{
+        width: calc(50% - 10px); /* 4 cards per row with 10px total margin */
+        margin: 5px;
+    }
+}
+
+@media(max-width: 1000px) and (min-width:751px){
+    .card{
+        width: calc(33.25% - 10px); /* 4 cards per row with 10px total margin */
+        margin: 5px;
+    }
+}
+
+
+/* make content in center */
+
+@media(max-width: 872px) and (min-width: 751px){
+   
+    .price{
+        text-align: center;
+        min-height: 20px;
+        padding-top: 5px;
+        font-size: 18px;
+        line-height: 20px;
+    }
+    .end-card{
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+
+    .card button{
+        order: 2;
+        margin-top: 10px;
+        display: inline-block;
+        max-width: inherit;
+        vertical-align: baseline;
+        position: relative;
+        min-height: 31px;
+        width: 100%;
+        
+    }
+    .heart{
+        margin-left: 20px;
+        margin-right: 49px;
+        order: 1;
+    }
+    .show-svg{
+        margin-left: -10px;
+        margin-right: 35px;
+        order: 1;
+    }
+    .child-card{
+        margin: 0px;
+    }
+}
+
+
+
+@media(max-width: 1170px) and (min-width:1001px){
+    .price{
+        text-align: center;
+        min-height: 20px;
+        padding-top: 5px;
+       
+        line-height: 20px;
+    }
+    .end-card{
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+
+    .card button{
+        order: 2;
+        margin-top: 10px;
+        display: inline-block;
+        max-width: inherit;
+        vertical-align: baseline;
+        position: relative;
+        min-height: 31px;
+        width: 100%;
+        
+    }
+    .heart{
+        margin-left: 20px;
+        margin-right: 68px;
         order: 1;
     }
     .show-svg{
