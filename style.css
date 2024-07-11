@@ -30,6 +30,7 @@ header, main, footer {
 }
 
 
+
 h1 {
     font-size: 2rem;
     margin: 0.5rem 0;
@@ -330,6 +331,7 @@ svg{
     width: 50px; /* Adjust this value to change the button size */
     height: 50px; /* Adjust this value to change the button size */
     margin-left: 45px;
+    
 }
 
 .facebook-icone,
@@ -353,6 +355,7 @@ svg{
 .instagram-icone {
     background-color: #E1306C; /* Instagram's color */
     color: white;
+    
 }
 
 .tiktok-icone {
