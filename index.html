@@ -13,6 +13,7 @@
   <!--google fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Amiri&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="footer.css">
+  
   <link rel="stylesheet" href="loader.css">
   
   <title>Home</title>
@@ -21,8 +22,8 @@
 <body class="loading ">
   <div class="loader"></div>
   <div class="content">
-  
-    <section class="headerSection"> 
+
+    <section class="headerSection">  
             <header class="headerNav">
                 <nav class="top-nav">
                     <ul class="ul-nav">
@@ -62,7 +63,7 @@
                 </nav>
             </header>
             <hr class="headerSectionhr">
-        </section> 
+        </section>
     <!-- #### End top nav ####-->
 
     <section class="top-info">
@@ -138,11 +139,15 @@
 
   </div>
   <script src="site.js"></script>
+ 
   <script>
-    // JavaScript to hide the loader once the page has fully loaded
-    window.addEventListener('load', () => {
-      document.body.classList.remove('loading');
-    });
+    /* Hide Loader When Content Loads (JavaScript) */
+window.onload = function() {
+  const loader = document.querySelector('.loader');
+  loader.style.opacity = 0; /* Hide loader smoothly with transition (optional) */
+  loader.style.transition = 'opacity 0.5s ease-out'; /* Set transition duration and easing */
+};
+
   </script>
 </body>
 

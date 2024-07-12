@@ -39,16 +39,7 @@ h1 {
 p {
     margin: 1rem 0;
 }
-.brand-name{
-    color: cornflowerblue;
-    font-weight: 900;
-    font-size: larger;
-    font-family: system-ui ;
-    font-variant: petite-caps;
-}
-.carouseText{
-    color: darkslategray;
-}
+
 
 /* Responsive media queries */
 @media (max-width: 768px) {
@@ -85,53 +76,19 @@ a:hover {
    color: #56b0f2;
 }
 
+
+
+
+
 /* ///############## header section ###############/// */
 /* ///############## header section ###############/// */
 
-.headerSection{
-    opacity: 1;
-    height: fit-content;
-    background-color:white;
-}
+
 
 /* ///############## nav ###############/// */
 /* ///############## nav ###############/// */
 
-.headerNav{
-    padding-top: 25px;
-    padding-bottom: 0px;
-}
-nav{
-    width: 100%;
-    height: 100%;
-}
-.ul-nav{
-    list-style-type:none;
-    display: inline-flex;
-    margin-block:initial;
-    height: 100%;
-    width: 100%;
-}
-.logoPic{
-    height: 90%;
-    width: 100%;
-}
-li{
-    margin: 10px;
-}
-.menueIconeli{
-    margin-right: -10px;
-}
-.logoNameli{
-    width: 200px;
-    margin-top:-2px;
-    margin-left:400px;
-    margin-right:450px
-}
-svg{
-    width:25px;
-    height:25px
-}
+
 /* ///############## end nav ###############/// */
 /* ///############## end nav ###############/// */
 
@@ -163,136 +120,6 @@ svg{
 /* ///##            end hr           ##/// */
 
 
-@media (max-width: 1200px) {
-    .logoNameli {
-        width: 160px;
-        height: 30px;
-        margin-left: 360px;
-        margin-right: 340px;
-        margin-top:5px;
-    }
-    svg {
-        width: 24px;
-        height: 24px;
-    }
-    .ul-nav {
-        height: 100%;
-        width:100%;
-    }
-    .headerSection {
-        padding: 15px 0;
-        
-    }
-    .headerNav{
-        padding-top:0px;
-    }
-    .menueIconeli{
-        margin-right: -10px;
-    }
-}
-
-@media (max-width: 992px) {
-    .headerSection {
-        padding: 15px 0;
-        
-    }
-    
-    svg {
-        width: 20px;
-        height: 20px;
-    }
-    
-    .logoNameli {
-        width: 150px;
-        height: 30px;
-        margin-left: 300px;
-        margin-right: 250px;
-        margin-top:5px;
-    }
-    .menueIconeli{
-        margin-right: -10px;
-    }
-    .headerNav{
-        padding-top:0px;
-    }
-
-    .ul-nav {
-        height: 100%;
-        width:100%;
-    }
-}
-
-@media (max-width: 769px) {
-    .headerSection {
-        padding: 15px 0;
-        
-    }
-    
-    svg {
-        width: 20px;
-        height: 20px;
-    }
-    
-    .logoNameli {
-        width: 140px;
-        height: 30px;
-        margin-left: 230px;
-        margin-right: 230px;
-        margin-top:5px;
-    }
-    .menueIconeli{
-        margin-right: -10px;
-    }
-    .headerNav{
-        padding-top:0px;
-    }
-
-    .ul-nav {
-        height: 100%;
-    }
-} 
-
-@media (max-width: 576px) {
-    .headerSection {
-        padding: 15px 0;
-        
-    }
-    
-    svg {
-        width: 18px;
-        height: 18px;
-    }
-    
-    .logoNameli {
-        width: 120px;
-        height: 30px;
-        margin-left: 50px;
-        margin-right: 60px;
-        margin-top:5px;
-    }
-    .menueIconeli{
-        margin-right: -10px;
-    }
-    .headerNav{
-        padding-top:0px;
-    }
-
-    .ul-nav {
-        height: 100%;
-    }
-    .top-nav{
-        width: 100%;
-    }
-}
-@media only screen and (-webkit-min-device-pixel-ratio: 2),
-       only screen and (min--moz-device-pixel-ratio: 2),
-       only screen and (-o-min-device-pixel-ratio: 2/1),
-       only screen and (min-device-pixel-ratio: 2),
-       only screen and (min-resolution: 192dpi),
-       only screen and (min-resolution: 2dppx)
-    {
-
-    }
 
 /* ///############## end header section ###############/// */
 /* ///############## end header section ###############/// */
@@ -310,7 +137,16 @@ svg{
     margin: 10px;
 }
 
-
+.brand-name{
+    color: cornflowerblue;
+    font-weight: 900;
+    font-size: larger;
+    font-family: system-ui ;
+    font-variant: petite-caps;
+}
+.carouseText{
+    color: darkslategray;
+}
 
 /* ///############## carousel Section:: social-icons ###############/// */
 /* ///############## carousel Section:: social-icons ###############/// */
