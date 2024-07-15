@@ -26,7 +26,7 @@ body {
 body{
     height: 100vh;
     background-color:#000;
-    background-image: url("images/view-building-with-cartoon-style-architecture.jpg");
+    
     background-size:cover;
     background-position:center;
 }
@@ -101,7 +101,8 @@ li {
 }
 a {
     text-decoration: none;
-    color: #000;
+    /* color: #000; */
+    color: #fff;
     font-size: 1rem;
 }
 a:hover {
@@ -178,7 +179,8 @@ a:hover {
 }
 
 .dropdown_menu.open {
-    height: 240px;
+    /* height: 240px; */
+    height: fit-content;
 }
 
 .dropdown_menu li {
@@ -208,6 +210,14 @@ section#hero{
     margin-bottom: 1rem;
 
 }
+.fir{
+    background-image: url('images/pexels-aden-ardenrich-181745-581344.jpg');
+    background-size: cover; /* Cover the entire element with the image */
+    background-position: center; /* Center the image within the element */
+    background-repeat: no-repeat;
+}
+
+
 
 /* RESPONSIVE DESIGN */
 

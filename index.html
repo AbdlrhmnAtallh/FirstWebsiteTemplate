@@ -30,52 +30,55 @@
 <body>
   <div class="loader"></div>
 
-  <header>
-    <div class="navbar">
+  <section class="fir">
+    <header>
+      <div class="navbar">
         <div class="logo"><a href="#">logo name</a></div>
         <ul class="links">
-            <li><a href="hero">الرئيسيه</a></li>
-            <li><a href="about">عنا</a></li>
-            <li><a href="service">خدامات</a></li>
-            <li><a href="contact">تواصل</a></li>
+          <li><a href="hero">الرئيسيه</a></li>
+          <li><a href="about">عنا</a></li>
+          <li><a href="service">خدامات</a></li>
+          <li><a href="contact">تواصل</a></li>
         </ul>
         <a href="#" class="action_btn">اتصل</a>
         <div class="toggle_btn">
-            <i class="fa-solid fa-bars"></i>
+          <i class="fa-solid fa-bars"></i>
         </div>
-    </div>
+      </div>
 
-    <div class="dropdown_menu">
+      <div class="dropdown_menu">
         <li><a href="hero">الرئيسيه</a></li>
         <li><a href="about">عنا</a></li>
         <li><a href="service">خدامات</a></li>
         <li><a href="contact">تواصل</a></li>
         <a href="#" class="action_btn">اتصل</a>
-    </div>
-</header>
-<main>
- <section id="hero">
-   <h1>مرحبا بك</h1>
-   <p>
-     يمكنك الان تصفح منتجاتنا وشراء كل ما تحتاج اليه بضغطة واحدة! 
-   </p>
- </section>
+      </div>
+    </header>
+    <main>
+      <section id="hero">
+        <h1>مرحبا بك</h1>
+        <p>
+          يمكنك الان تصفح منتجاتنا وشراء كل ما تحتاج اليه بضغطة واحدة!
+        </p>
+      </section>
 
-</main>
-<!--JS CODE TO OPEN DROPDOWN MENU-->
-<script>
+    </main>
+  </section>
+
+  <!--JS CODE TO OPEN DROPDOWN MENU-->
+  <script>
     const toggleBtn = document.querySelector('.toggle_btn');
     const toggleBtnIcon = document.querySelector('.toggle_btn i');
     const dropDownMenu = document.querySelector('.dropdown_menu');
 
     toggleBtn.onclick = function () {
-        dropDownMenu.classList.toggle('open');
+      dropDownMenu.classList.toggle('open');
 
-        // change the menu icon to X mark
-        const isOpen = dropDownMenu.classList.contains('open');
-        toggleBtnIcon.className = isOpen ? 'fa-solid fa-xmark' : 'fa-solid fa-bars';
+      // change the menu icon to X mark
+      const isOpen = dropDownMenu.classList.contains('open');
+      toggleBtnIcon.className = isOpen ? 'fa-solid fa-xmark' : 'fa-solid fa-bars';
     };
-</script>
+  </script>
   <div class="content">
 
 
