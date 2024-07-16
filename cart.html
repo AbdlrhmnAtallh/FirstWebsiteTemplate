@@ -5,18 +5,71 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Shopping Cart</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="style.css">
+    
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css"
         integrity="sha384-gH2y ruptured 4ujij8zYTzKmejvbzLWGyft+hasz5tHzOZHrOo" crossorigin="anonymous">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.1.1/css/all.css"
         integrity="sha384-jhilTVEKzvkxnWS3UDyJxkcvAlIWKEQqFO8iExLNvBVfwOnnmQpZCS8O+hwjXULzg" crossorigin="anonymous">
     <!--google fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Amiri&display=swap" rel="stylesheet">
+
+<style>
+    html, body {
+  direction: rtl; /* Ensures the whole page is in RTL direction */
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; /* Ensures the body covers the full height of the viewport */
+  margin: 0;
+  padding: 0;
+}
+
+footer {
+  width: 100%; /* Ensures the footer spans the full width of the viewport */
+  background: linear-gradient(to right, #00093c, #2d0b00);
+  color: #fff;
+  padding: 10px 0 30px;
+  border-top-left-radius: 125px;
+  font-size: 30px;
+  line-height: 20px;
+}
+
+.row {
+  width: 85%;
+  margin: auto;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+
+.col {
+  flex-basis: 25%;
+  padding: 10px;
+}
+
+.logo {
+  width: 80px;
+  margin-bottom: 30px;
+}
+
+.col h3 {
+  width: fit-content;
+  margin-bottom: 40px;
+  position: relative;
+}
+
+.email-id {
+  width: fit-content;
+  border-bottom: 1px solid #ccc;
+}
+
+</style>
+
 </head>
 
 <body>
+
+
     <h1>Shopping Cart</h1>
     <div id="cart-container">
         <!-- Cart items will be displayed here -->
@@ -374,7 +427,26 @@
     </section>
 
 
-
+    <footer>
+        <div class="row">
+          <div class="col">
+            <img src="images/logo.avif" class="logo">
+            <p>
+              ىيبسي نب سينمى بسيبىسي بسيىبخسي بىسي9تبهخلى لاتاسىطبشي رحسيتبسي ب حهىبس نبسي ىسىخ
+            </p>
+          </div>
+          <div class="col">
+            <h3>المكتب</h3>
+            <p>طريق الحرية</p>
+            <p>الاسكندرية مصر</p>
+            <p>رقم التعريف الضريبي 23133131</p>
+            <p class="email-id">eamilme@gmail.com</p>
+            <h4>+03 393929</h4>
+          </div>
+          <div class="col"></div>
+          <div class="col"></div>
+        </div>
+      </footer>
     <script src="cart.js"></script>
 </body>
 
