@@ -64,14 +64,6 @@ fetch('products.json')
     .then(data => displayProducts(data))
     .catch(error => console.error('Error fetching products:', error));
 
-
-
-
-
-
-
-
-
 // Function to add product to cart
 function addToCart(productId) {
     let cart = JSON.parse(localStorage.getItem('cart')) || [];
