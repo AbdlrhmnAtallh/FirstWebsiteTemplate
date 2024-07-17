@@ -16,13 +16,27 @@ function displayProduct(product) {
         document.querySelector('.product-info h3').textContent = product.Name;
         document.querySelector('.product-info h5').innerHTML = `${product.Price} ج.م`;
         document.querySelector('.product-info p').textContent = product.Description;
-        document.innerHTML = `
-    <div class="quantity">
-        <input type="number" value="1" min="1">
-        <button onclick="addToCart(${product.Id})>اضف الي العربة</button>
-    </div>
-`;
-       
+    
+        // Create the quantity div and its contents
+        const quantityDiv = document.createElement('div');
+        quantityDiv.className = 'quantity';
+        
+        const inputElement = document.createElement('input');
+        inputElement.type = 'number';
+        inputElement.value = 1;
+        inputElement.min = 1;
+        
+        const buttonElement = document.createElement('button');
+        buttonElement.textContent = 'اضف الي العربة';
+        buttonElement.setAttribute('onclick', `addToCart(${product.Id})`);
+    
+        quantityDiv.appendChild(inputElement);
+        quantityDiv.appendChild(buttonElement);
+    
+        // Append the quantity div to wherever you want it in the document
+        // For example, assuming there's a container with class 'product-info'
+        document.querySelector('.product-info').appendChild(quantityDiv);
+           
         // Additional properties to be displayed can be added here
     } else {
         document.querySelector('.product-container').textContent = 'Product not found';
