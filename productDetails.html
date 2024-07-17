@@ -1,6 +1,4 @@
-<!DOCTYPE html>
 <html lang="ar" dir="rtl">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -42,25 +40,27 @@
    
     <!-- product section -->
     <section class="product-container">
-      <!-- left side -->
-      <div class="img-card">
-        <img src="" alt="" id="featured-image">
-        <!-- small img -->
-        <div class="small-Card" id="small-images">
-        </div>
+        <!-- left side -->
+        <div class="img-card">
+          <img src="" alt="" id="featured-image">
+          <!-- small img -->
+          <div class="small-Card">
+              <img src="" alt="" class="small-Img">
+              <img src="" alt="" class="small-Img">
+              <img src="" alt="" class="small-Img">
+              <img src="" alt="" class="small-Img">
+          </div>
       </div>
-      <!-- Right side -->
-      <div class="product-info">
-        <h3 id="product-name">اسم المنتج</h3>
-        <h5 id="product-price">180 بدلا من <del>200</del></h5>
-        <p id="product-description">
-        </p>
-        <p id="product-specs">
-        </p>
-        <div class="quantity">
-          <input type="number" value="1" min="1" id="quantity">
-          <button id="add-to-cart-button">اضف الي العربة</button>
-        </div>
+        <!-- Right side -->
+        <div class="product-info">
+          <h3></h3>
+          <h5></h5>
+          <p></p>
+          <!-- Additional placeholders for more product details -->
+          <div class="quantity">
+              <input type="number" value="1" min="1">
+              <button> اضف الي العربة </button>
+          </div>
       </div>
     </section>
     <footer>
@@ -109,10 +109,67 @@
         <p class="copyright"><a href="">Issis.dev </a> All rights reserved © </p>
       </footer>
 
+    <!-- script tags -->
+    <script>
+        let featuedImg = document.getElementById('featured-image');
+        let smallImgs = document.getElementsByClassName('small-Img');
 
-    <!--fatch from json-->
-<script src="productDetails.js"></script>
+        smallImgs[0].addEventListener('click', () => {
+            featuedImg.src = smallImgs[0].src;
+            smallImgs[0].classList.add('sm-card')
+            smallImgs[1].classList.remove('sm-card')
+            smallImgs[2].classList.remove('sm-card')
+            smallImgs[3].classList.remove('sm-card')
+            smallImgs[4].classList.remove('sm-card')
+        })
+        smallImgs[1].addEventListener('click', () => {
+            featuedImg.src = smallImgs[1].src;
+            smallImgs[0].classList.remove('sm-card')
+            smallImgs[1].classList.add('sm-card')
+            smallImgs[2].classList.remove('sm-card')
+            smallImgs[3].classList.remove('sm-card')
+            smallImgs[4].classList.remove('sm-card')
+        })
+        smallImgs[2].addEventListener('click', () => {
+            featuedImg.src = smallImgs[2].src;
+            smallImgs[0].classList.remove('sm-card')
+            smallImgs[1].classList.remove('sm-card')
+            smallImgs[2].classList.add('sm-card')
+            smallImgs[3].classList.remove('sm-card')
+            smallImgs[4].classList.remove('sm-card')
+        })
+        smallImgs[3].addEventListener('click', () => {
+            featuedImg.src = smallImgs[3].src;
+            smallImgs[0].classList.remove('sm-card')
+            smallImgs[1].classList.remove('sm-card')
+            smallImgs[2].classList.remove('sm-card')
+            smallImgs[3].classList.add('sm-card')
+            smallImgs[4].classList.remove('sm-card')
+        })
+        smallImgs[4].addEventListener('click', () => {
+            featuedImg.src = smallImgs[4].src;
+            smallImgs[0].classList.remove('sm-card')
+            smallImgs[1].classList.remove('sm-card')
+            smallImgs[2].classList.remove('sm-card')
+            smallImgs[3].classList.remove('sm-card')
+            smallImgs[4].classList.add('sm-card')
+        })
+    </script>
+    <script>
+         // DROPDOWN LIST 
+    const toggleBtn = document.querySelector('.toggle_btn');
+    const toggleBtnIcon = document.querySelector('.toggle_btn i');
+    const dropDownMenu = document.querySelector('.dropdown_menu');
 
+    toggleBtn.onclick = function () {
+      dropDownMenu.classList.toggle('open');
+
+      // change the menu icon to X mark
+      const isOpen = dropDownMenu.classList.contains('open');
+      toggleBtnIcon.className = isOpen ? 'fa-solid fa-xmark' : 'fa-solid fa-bars';
+    };
+    </script>
+  <script src="productDetails.js"></script>
 </body>
 
 </html>
