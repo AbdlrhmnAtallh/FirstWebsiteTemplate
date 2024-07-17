@@ -1,88 +1,151 @@
-body {
-    font-family: "Century Gothic", "Lato", sans-serif;
+/* ///############## header section ###############/// */
+
+li {
+  list-style: none;
+}
+a {
+  text-decoration: none;
+  color: #fff;
+  font-size: 1rem;
+}
+a:hover {
+  color: orange;
+}
+.header {
+  position: relative;
+  padding: 0 2rem;
+}
+
+.navbar {
+  width: 80%;
+  height: 66px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.navbar .logo a {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.navbar .links {
+  display: flex;
+  gap: 2rem;
+}
+
+.navbar .toggle_btn {
+  color: rgb(2, 0, 0);
+  font-size: 1.5rem;
+  cursor: pointer;
+  display: none;
+}
+
+.action_btn {
+  background-color: orange;
+  color: #fff;
+  padding: 0.5rem 1rem;
+  border: none;
+  outline: none;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: scale 0.2s ease;
+}
+
+.action_btn:hover {
+  scale: 1.05;
+  color: #fff;
+}
+
+.action_btn:active {
+  scale: 0.95;
+}
+
+/* MENU DROPDOWN */
+
+.dropdown_menu {
+  display: none;
+  position: absolute;
+  left: 0;
+  top: 60px;
+  height: 0;
+  width: 300px;
+  background-color: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(15px);
+  border-radius: 10px;
+  overflow: hidden;
+  transition: height 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.dropdown_menu.open {
+  /* height: 240px; */
+  height: fit-content;
+}
+
+.dropdown_menu li {
+  padding: 0.7rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.dropdown_menu .action_btn {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+/* HERO */
+section#hero{
+  height:calc(100vh - 60px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content:center;
+  color:#fff;
+}
+#hero h1{
+  font-size: 3rem;
+  margin-bottom: 1rem;
+
+}
+.fir{
+  background-image: url('images/pexels-aden-ardenrich-181745-581344.jpg');
+  background-size: cover; /* Cover the entire element with the image */
+  background-position: center; /* Center the image within the element */
+  background-repeat: no-repeat;
+  flex: 1;
+}
+
+
+
+/* RESPONSIVE DESIGN */
+
+@media (max-width: 992px) {
+  .navbar{
+      width: 100%;
   }
-  
-  a {
-    text-decoration: none;
+  .navbar .links,
+  .navbar .action_btn {
+      display: none;
   }
-  
-  .et-hero-tabs,
-  .et-slide {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    position: relative;
-    background: #eee;
-    text-align: center;
-    padding: 0 2em;
+  .navbar .toggle_btn {
+      display: block;
   }
-  .et-hero-tabs h1,
-  .et-slide h1 {
-    font-size: 2rem;
-    margin: 0;
-    letter-spacing: 1rem;
+  .dropdown_menu {
+      display: block;
   }
-  .et-hero-tabs h3,
-  .et-slide h3 {
-    font-size: 1rem;
-    letter-spacing: 0.3rem;
-    opacity: 0.6;
+}
+
+/* FULL WIDTH FOR DROPDOWN LIST IN MOBILE SCREEN */
+
+@media (max-width: 575px) {
+  .dropdown_menu {
+      right: 2rem;
+      width: unset;
   }
-  
-  .et-hero-tabs-container {
-    display: flex;
-    flex-direction: row;
-    position: absolute;
-    bottom: 0;
-    width: 100%;
-    height: 70px;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
-    background: #fff;
-    z-index: 10;
-  }
-  .et-hero-tabs-container--top {
-    position: fixed;
-    top: 0;
-  }
-  
-  .et-hero-tab {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex: 1;
-    color: #000;
-    letter-spacing: 0.1rem;
-    transition: all 0.5s ease;
-    font-size: 0.8rem;
-  }
-  .et-hero-tab:hover {
-    color: white;
-    background: rgba(102, 177, 241, 0.8);
-    transition: all 0.5s ease;
-  }
-  
-  .et-hero-tab-slider {
-    position: absolute;
-    bottom: 0;
-    width: 0;
-    height: 6px;
-    background: #66B1F1;
-    transition: left 0.3s ease;
-  }
-  
-  @media (min-width: 800px) {
-    .et-hero-tabs h1,
-  .et-slide h1 {
-      font-size: 3rem;
-    }
-    .et-hero-tabs h3,
-  .et-slide h3 {
-      font-size: 1rem;
-    }
-  
-    .et-hero-tab {
-      font-size: 1rem;
-    }
-  }
+}
+

@@ -89,8 +89,7 @@ li {
 }
 a {
     text-decoration: none;
-    /* color: #000; */
-    color: #fff;
+    color: #000;
     font-size: 1rem;
 }
 a:hover {
@@ -121,7 +120,7 @@ a:hover {
 }
 
 .navbar .toggle_btn {
-    color: #fff;
+    color: rgb(2, 0, 0);
     font-size: 1.5rem;
     cursor: pointer;
     display: none;
