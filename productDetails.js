@@ -12,11 +12,20 @@ function fetchProductById(id) {
 // Display product data on the page
 function displayProduct(product) {
     if (product) {
+        // image in large size 
         document.getElementById('featured-image').src = `images/${product.ImagePath1}`;
+        // images in small size
+        document.getElementById('small-Img').src = `images/${product.ImagePath2}`;
+        document.getElementById('small-Img').src = `images/${product.ImagePath3}`;
+        document.getElementById('small-Img').src = `images/${product.ImagePath4}`;
+        document.getElementById('small-Img').src = `images/${product.ImagePath5}`;
+        // product name and price 
         document.querySelector('.product-info h3').textContent = product.Name;
         document.querySelector('.product-info h5').innerHTML = `${product.Price} ج.م`;
+        // first and second description 
         document.querySelector('.product-info p').textContent = product.Description;
-    
+        //document.querySelector('.product-info p').textContent = `<div class = "dot">${product.Description2}</div>`;
+        
         // Create the quantity div and its contents
         const quantityDiv = document.createElement('div');
         quantityDiv.className = 'quantity';
@@ -29,10 +38,10 @@ function displayProduct(product) {
         const buttonElement = document.createElement('button');
         buttonElement.textContent = 'اضف الي العربة';
         buttonElement.setAttribute('onclick', `addToCart(${product.Id})`);
-    
+        
         quantityDiv.appendChild(inputElement);
         quantityDiv.appendChild(buttonElement);
-    
+        
         // Append the quantity div to wherever you want it in the document
         // For example, assuming there's a container with class 'product-info'
         document.querySelector('.product-info').appendChild(quantityDiv);
