@@ -107,32 +107,7 @@
     <p class="copyright"><a href="">Issis.dev </a> All rights reserved © </p>
   </footer>
 
-  <!-- script tags -->
-  <script>
-    // Get references to the featured image and small images
-    let featuredImg = document.getElementById('featured-image');
-    let smallImgs = document.getElementsByClassName('small-Img');
-
-    // Function to handle click events on small images
-    function handleSmallImgClick(event) {
-      // Update the featured image source
-      featuredImg.src = event.target.src;
-
-      // Remove the 'sm-card' class from all small images
-      for (let img of smallImgs) {
-        img.classList.remove('sm-card');
-      }
-
-      // Add the 'sm-card' class to the clicked small image
-      event.target.classList.add('sm-card');
-    }
-
-    // Add click event listeners to all small images
-    for (let img of smallImgs) {
-      img.addEventListener('click', handleSmallImgClick);
-    }
-
-  </script>
+  
   <script>
     // DROPDOWN LIST 
     const toggleBtn = document.querySelector('.toggle_btn');

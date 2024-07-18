@@ -12,33 +12,56 @@ function fetchProductById(id) {
 // Display product data on the page
 function displayProduct(product) {
     if (product) {
-        // Image in large size 
-        document.getElementById('featured-image').src = `images/${product.ImagePath1}`;
+         // Image in large size 
+         document.getElementById('featured-image').src = `images/${product.ImagePath1}`;
         
-        // Images in small size
-        const smallImagesContainer = document.querySelector('.small-Card');
-        
-        // Clear any existing small images
-        smallImagesContainer.innerHTML = '';
-        
-        // Array of small image paths
-        const smallImagePaths = [
-            product.ImagePath2,
-            product.ImagePath3,
-            product.ImagePath4,
-            product.ImagePath5
-        ];
-        
-        // Iterate over small image paths and add non-null images
-        smallImagePaths.forEach(imagePath => {
-            if (imagePath) { // Check if imagePath is not null or undefined
-                const imgElement = document.createElement('img');
-                imgElement.src = `images/${imagePath}`;
-                imgElement.alt = product.Name;
-                imgElement.className = 'small-Img';
-                smallImagesContainer.appendChild(imgElement);
-            }
-        });
+         // Images in small size
+         const smallImagesContainer = document.querySelector('.small-Card');
+         
+         // Clear any existing small images
+         smallImagesContainer.innerHTML = '';
+         
+         // Array of small image paths
+         const smallImagePaths = [
+             product.ImagePath1,
+             product.ImagePath2,
+             product.ImagePath3,
+             product.ImagePath4,
+             product.ImagePath5
+         ];
+         
+         // Iterate over small image paths and add non-null images
+         smallImagePaths.forEach(imagePath => {
+             if (imagePath) { // Check if imagePath is not null or undefined
+                 const imgElement = document.createElement('img');
+                 imgElement.src = `images/${imagePath}`;
+                 imgElement.alt = 'image not found';
+                 imgElement.className = 'small-Img';
+                 smallImagesContainer.appendChild(imgElement);
+             }
+         });
+ 
+         // Get references to the small images
+         let smallImgs = document.getElementsByClassName('small-Img');
+         
+         // Function to handle click events on small images
+         function handleSmallImgClick(event) {
+             // Update the featured image source
+             document.getElementById('featured-image').src = event.target.src;
+ 
+             // Remove the 'sm-card' class from all small images
+             for (let img of smallImgs) {
+                 img.classList.remove('sm-card');
+             }
+ 
+             // Add the 'sm-card' class to the clicked small image
+             event.target.classList.add('sm-card');
+         }
+ 
+         // Add click event listeners to all small images
+         for (let img of smallImgs) {
+             img.addEventListener('click', handleSmallImgClick);
+         }
 
         // product name and price 
         document.querySelector('.product-info h3').textContent = product.Name;
