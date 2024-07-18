@@ -12,18 +12,38 @@ function fetchProductById(id) {
 // Display product data on the page
 function displayProduct(product) {
     if (product) {
-        // image in large size 
+        // Image in large size 
         document.getElementById('featured-image').src = `images/${product.ImagePath1}`;
-        // images in small size
-        const smallImages = document.querySelectorAll('.small-Img');
-        smallImages[0].src = `images/${product.ImagePath2}`;
-        smallImages[1].src = `images/${product.ImagePath3}`;
-        smallImages[2].src = `images/${product.ImagePath4}`;
-        smallImages[3].src = `images/${product.ImagePath5}`;
+        
+        // Images in small size
+        const smallImagesContainer = document.querySelector('.small-Card');
+        
+        // Clear any existing small images
+        smallImagesContainer.innerHTML = '';
+        
+        // Array of small image paths
+        const smallImagePaths = [
+            product.ImagePath2,
+            product.ImagePath3,
+            product.ImagePath4,
+            product.ImagePath5
+        ];
+        
+        // Iterate over small image paths and add non-null images
+        smallImagePaths.forEach(imagePath => {
+            if (imagePath) { // Check if imagePath is not null or undefined
+                const imgElement = document.createElement('img');
+                imgElement.src = `images/${imagePath}`;
+                imgElement.alt = product.Name;
+                imgElement.className = 'small-Img';
+                smallImagesContainer.appendChild(imgElement);
+            }
+        });
+
         // product name and price 
         document.querySelector('.product-info h3').textContent = product.Name;
         document.querySelector('.product-info h5').innerHTML = `${product.Price} ج.م`;
-        // first and second description 
+        // First and second description 
         document.querySelector('.product-info p').textContent = product.Description;
         //document.querySelector('.product-info p').textContent = `<div class = "dot">${product.Description2}</div>`;
         
