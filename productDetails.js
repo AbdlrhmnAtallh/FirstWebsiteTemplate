@@ -26,8 +26,7 @@ function displayProduct(product) {
              product.ImagePath1,
              product.ImagePath2,
              product.ImagePath3,
-             product.ImagePath4,
-             product.ImagePath5
+             product.ImagePath4
          ];
          
          // Iterate over small image paths and add non-null images
@@ -68,7 +67,8 @@ function displayProduct(product) {
         document.querySelector('.product-info h5').innerHTML = `${product.Price} ج.م`;
         // First and second description 
         document.querySelector('.product-info p').textContent = product.Description;
-        //document.querySelector('.product-info p').textContent = `<div class = "dot">${product.Description2}</div>`;
+        displayDescriptions(product.dd)
+
         
         // Create the quantity div and its contents
         const quantityDiv = document.createElement('div');
@@ -114,4 +114,33 @@ function addToCart(productId) {
     localStorage.setItem('cart', JSON.stringify(cart));
     alert('Product added to cart');
 }
+    // Function to display data on the page
+    function displayDescriptions(data) {
+        const container = document.getElementById('description-container');
+        
+        data.dd.forEach(description => {
+            // Create a new p element
+            const p = document.createElement('p');
+            
+            // Create a new span element
+            const span = document.createElement('span');
+            
+            // Create a new div element with the 'dot' class
+            const dotDiv = document.createElement('div');
+            dotDiv.className = 'dot';
+            
+            // Create a text node for the description
+            const textNode = document.createTextNode(description);
+            
+            // Append the dotDiv and textNode to the span
+            span.appendChild(dotDiv);
+            span.appendChild(textNode);
+            
+            // Append the span to the p element
+            p.appendChild(span);
+            
+            // Append the p element to the container
+            container.appendChild(p);
+        });
+    }
     
