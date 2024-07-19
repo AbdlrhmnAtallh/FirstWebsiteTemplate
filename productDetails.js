@@ -137,29 +137,29 @@ function displayDescriptions(descriptions) {
 
 
 // GET RELATED PRODUCTS 
-export async function getRelatedProducts(productid) {
-    try {
-      // Fetch the products from the JSON file
-      const response = await fetch('products.json');
-      const products = await response.json();
+// export async function getRelatedProducts(productid) {
+//     try {
+//       // Fetch the products from the JSON file
+//       const response = await fetch('products.json');
+//       const products = await response.json();
   
-      // Find the product with the given ID
-      const product = products.find(p => p.id === productid);
+//       // Find the product with the given ID
+//       const product = products.find(p => p.id === productid);
   
-      if (!product) {
-        throw new Error('Product not found');
-      }
+//       if (!product) {
+//         throw new Error('Product not found');
+//       }
   
-      // Filter the products to get the related ones
-      const relatedProducts = products.filter(p => product.relatedProducts.includes(p.id));
+//       // Filter the products to get the related ones
+//       const relatedProducts = products.filter(p => product.relatedProducts.includes(p.id));
   
-      return relatedProducts;
-    } catch (error) {
-      console.error('Error fetching related products:', error);
-      return [];
-    }
-}
+//       return relatedProducts;
+//     } catch (error) {
+//       console.error('Error fetching related products:', error);
+//       return [];
+//     }
+// }
 
-import {displayProducts} from './site'
+// import {displayProducts} from './site'
 
-displayProducts(getRelatedProducts(productId));
+// displayProducts(getRelatedProducts(productId));
