@@ -131,7 +131,9 @@
       toggleBtnIcon.className = isOpen ? 'fa-solid fa-xmark' : 'fa-solid fa-bars';
     };
   </script>
-  <script src="productDetails.js"></script>
+   <!-- Ensure all JS files are treated as modules -->
+   <script type="module" src="productDetails.js"></script>
+   <script type="module" src="site.js"></script>
 </body>
 
 </html>

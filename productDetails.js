@@ -134,7 +134,9 @@ function displayDescriptions(descriptions) {
 }
 
 
-// productService.js
+
+
+// GET RELATED PRODUCTS 
 export async function getRelatedProducts(productid) {
     try {
       // Fetch the products from the JSON file
@@ -157,7 +159,7 @@ export async function getRelatedProducts(productid) {
       return [];
     }
 }
-  
+
 import {displayProducts} from './site'
 
 displayProducts(getRelatedProducts(productId));
