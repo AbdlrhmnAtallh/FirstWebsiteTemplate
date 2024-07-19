@@ -132,3 +132,32 @@ function displayDescriptions(descriptions) {
         });
     }
 }
+
+
+// productService.js
+export async function getRelatedProducts(productid) {
+    try {
+      // Fetch the products from the JSON file
+      const response = await fetch('products.json');
+      const products = await response.json();
+  
+      // Find the product with the given ID
+      const product = products.find(p => p.id === productid);
+  
+      if (!product) {
+        throw new Error('Product not found');
+      }
+  
+      // Filter the products to get the related ones
+      const relatedProducts = products.filter(p => product.relatedProducts.includes(p.id));
+  
+      return relatedProducts;
+    } catch (error) {
+      console.error('Error fetching related products:', error);
+      return [];
+    }
+}
+  
+export {displayProducts} from './site'
+
+displayProducts(getRelatedProducts(productId));
