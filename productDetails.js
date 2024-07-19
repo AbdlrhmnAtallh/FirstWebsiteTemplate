@@ -66,8 +66,8 @@ function displayProduct(product) {
         document.querySelector('.product-info h3').textContent = product.Name;
         document.querySelector('.product-info h5').innerHTML = `${product.Price} ج.م`;
         // First and second description 
-        document.querySelector('.product-info p').textContent = product.Description;
-        displayDescriptions(product.dd)
+        document.querySelector('.product-info p.description-main').textContent = product.Description;
+        displayDescriptions(product.dd);
 
         
         // Create the quantity div and its contents
@@ -114,33 +114,21 @@ function addToCart(productId) {
     localStorage.setItem('cart', JSON.stringify(cart));
     alert('Product added to cart');
 }
-    // Function to display data on the page
-    function displayDescriptions(data) {
-        const container = document.getElementById('description-container');
-        
-        data.dd.forEach(description => {
-            // Create a new p element
+   
+// Function to display descriptions
+function displayDescriptions(descriptions) {
+    const container = document.getElementById('description-container');
+    if (container) {
+        descriptions.forEach(description => {
             const p = document.createElement('p');
-            
-            // Create a new span element
             const span = document.createElement('span');
-            
-            // Create a new div element with the 'dot' class
             const dotDiv = document.createElement('div');
             dotDiv.className = 'dot';
-            
-            // Create a text node for the description
             const textNode = document.createTextNode(description);
-            
-            // Append the dotDiv and textNode to the span
             span.appendChild(dotDiv);
             span.appendChild(textNode);
-            
-            // Append the span to the p element
             p.appendChild(span);
-            
-            // Append the p element to the container
             container.appendChild(p);
         });
     }
-    
+}
