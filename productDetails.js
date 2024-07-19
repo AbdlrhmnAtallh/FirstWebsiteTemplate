@@ -158,6 +158,6 @@ export async function getRelatedProducts(productid) {
     }
 }
   
-export {displayProducts} from './site'
+import {displayProducts} from './site'
 
 displayProducts(getRelatedProducts(productId));
