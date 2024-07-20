@@ -1,7 +1,7 @@
 // Extract the product ID from the URL
 const urlParams = new URLSearchParams(window.location.search);
 const productId = urlParams.get('id');
-
+const relatedProductsContainer = document.getElementById("related-products-container");
 // Function to fetch product data by ID
 function fetchProductById(id) {
     return fetch('products.json')
@@ -90,7 +90,7 @@ function displayProduct(product) {
         // For example, assuming there's a container with class 'product-info'
         document.querySelector('.product-info').appendChild(quantityDiv);
            
-       // RELATED PRODUCTS 
+       
        // Display related products
        if (product.relatedproducts && product.relatedproducts.length > 0) {
         product.relatedproducts.forEach(relatedId => {
