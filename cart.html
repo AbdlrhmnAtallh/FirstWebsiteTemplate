@@ -2,101 +2,216 @@
 <html lang="ar" dir="rtl">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Shopping Cart</title>
-    
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css"
-        integrity="sha384-gH2y ruptured 4ujij8zYTzKmejvbzLWGyft+hasz5tHzOZHrOo" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.1.1/css/all.css"
-        integrity="sha384-jhilTVEKzvkxnWS3UDyJxkcvAlIWKEQqFO8iExLNvBVfwOnnmQpZCS8O+hwjXULzg" crossorigin="anonymous">
-    <!--google fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Amiri&display=swap" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shopping Cart</title>
 
-<style>
-    html, body {
-  direction: rtl; /* Ensures the whole page is in RTL direction */
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh; /* Ensures the body covers the full height of the viewport */
-  margin: 0;
-  padding: 0;
-}
+  <!--google fonts -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
 
-footer {
-  width: 100%; /* Ensures the footer spans the full width of the viewport */
-  background: linear-gradient(to right, #00093c, #2d0b00);
-  color: #fff;
-  padding: 10px 0 30px;
-  border-top-left-radius: 125px;
-  font-size: 30px;
-  line-height: 20px;
-}
-
-.row {
-  width: 85%;
-  margin: auto;
-  display: flex;
-  flex-wrap: wrap;
-  align-items: flex-start;
-  justify-content: space-between;
-}
-
-.col {
-  flex-basis: 25%;
-  padding: 10px;
-}
-
-.logo {
-  width: 80px;
-  margin-bottom: 30px;
-}
-
-.col h3 {
-  width: fit-content;
-  margin-bottom: 40px;
-  position: relative;
-}
-
-.email-id {
-  width: fit-content;
-  border-bottom: 1px solid #ccc;
-}
-
-</style>
-
+  <link rel="stylesheet" href="cart.css">
+  <link rel="stylesheet" href="nav.css">
+  <link rel="stylesheet" href="footer.css">
+  <link rel="stylesheet" href="cart.css">
 </head>
 
 <body>
 
-
-    <h1>Shopping Cart</h1>
-    <div id="cart-container">
-        <!-- Cart items will be displayed here -->
+  <header>
+    <div class="navbar">
+      <div class="logo"><a href="#">logo name</a></div>
+      <ul class="links">
+        <li><a href="index.html">الرئيسيه</a></li>
+        <li><a href="about">عنا</a></li>
+        <li><a href="service">خدمات</a></li>
+        <li><a href="contact">تواصل</a></li>
+      </ul>
+      <a href="cart.html" class="action_btn">اتصل</a>
+      <div class="toggle_btn">
+        <i class="fa-solid fa-bars"></i>
+      </div>
     </div>
-    <button id="order-now">Order Now via WhatsApp</button>
 
-    <footer>
-        <div class="row">
-          <div class="col">
-            <img src="images/logo.avif" class="logo">
-            <p>
-              ىيبسي نب سينمى بسيبىسي بسيىبخسي بىسي9تبهخلى لاتاسىطبشي رحسيتبسي ب حهىبس نبسي ىسىخ
-            </p>
+    <div class="dropdown_menu">
+      <li><a href="hero">الرئيسيه</a></li>
+      <li><a href="about">عنا</a></li>
+      <li><a href="service">خدمات</a></li>
+      <li><a href="contact">تواصل</a></li>
+      <a href="#" class="action_btn">اتصل</a>
+    </div>
+  </header>
+
+
+<!-- <div id="cart-container"></div>
+  <div class="cart-page">
+    <table></table>
+  </div> -->
+
+  <!--cart details-->
+<!-- 
+  <div class="small-container cart-page">
+    <table>
+      <tr>
+        <th>العنصر</th>
+        <th>الكمية</th>
+        <th>السعر الكلي</th>
+      </tr>
+      <tr>
+        <td>
+          <div class="cart-info">
+            <img src="images/4.jpg">
+            <div>
+              <p>سامسونج الترا </p>
+              <small>السعر : 500 </small>
+              <br>
+              <a href="">حذف</a>
+            </div>
           </div>
-          <div class="col">
-            <h3>المكتب</h3>
-            <p>طريق الحرية</p>
-            <p>الاسكندرية مصر</p>
-            <p>رقم التعريف الضريبي 23133131</p>
-            <p class="email-id">eamilme@gmail.com</p>
-            <h4>+03 393929</h4>
+        </td>
+        <td><input type="number" value="1"></td>
+        <td>500 ج.م</td>
+      </tr>
+
+      <tr>
+        <td>
+          <div class="cart-info">
+            <img src="images/408a50c2-826a-4da9-b088-4c49e5358f7c.jpg">
+            <div>
+              <p>ايفون 6 </p>
+              <small>السعر : 500 </small>
+              <br>
+              <a href=""> : حذف</a>
+            </div>
           </div>
-          <div class="col"></div>
-          <div class="col"></div>
+        </td>
+        <td><input type="number" value="2"></td>
+        <td>1000 ج.م</td>
+      </tr>
+
+      <tr>
+        <td>
+          <div class="cart-info">
+            <img src="images/photo_5839007193259688624_y.jpg">
+            <div>
+              <p>سامسونج الترا </p>
+              <small>السعر : 300 </small>
+              <br>
+              <a href="">حذف</a>
+            </div>
+          </div>
+        </td>
+        <td><input type="number" value="3"></td>
+        <td>900 ج.م</td>
+      </tr>
+    </table>
+    <div class="total-price">
+      <table>
+        <tr>
+          <td>السعر الكلي</td>
+          <td>1000ج.م</td>
+        </tr>
+      </table>
+    </div>
+  <button class="order-btn">اطلب الان عبر واتساب</button>
+  </div>
+
+ -->
+
+
+ <div class="small-container cart-page">
+  <div id="empty-cart-message" >
+      <h1>سلة التسوق فارغة</h1>
+  </div>
+  <table id="cart-table">
+      <!-- Cart items will be inserted here by JavaScript -->
+  </table>
+  <div id="totalprice-hide" class="total-price">
+      <table>
+          <tr>
+              <td>السعر الكلي</td>
+              <td id="total-price">0</td>
+          </tr>
+      </table>
+  </div>
+  <button id="orderbtn" onclick="sendOrderWhatsApp()">اطلب الان عبر واتساب</button>
+</div>
+
+
+
+<!-- 
+  <div class="shopping-cart">
+  <h1>Shopping Cart</h1>
+  <div id="cart-container">
+
+  </div>
+  <button id="order-now">Order Now via WhatsApp</button>
+</div> -->
+  <footer>
+    <div class="row">
+      <div class="col">
+        <img src="images/logo.avif" class="logo-footer">
+        <p class="portfolio-p">
+          نحن نقدم لك أحدث الهواتف الذكية من أشهر العلامات التجارية العالمية، بأسعار تنافسية وخدمة ممتازة.استمتع بتجربة
+          تسوق فريدة وممتعة، حيث يمكنك اختيار الجهاز الذي يناسب احتياجاتك وأسلوب حياتكاكتشف مجموعة متنوعة من الاكسسوارات
+          والحلول التقنية الإضافية التي تجعل حياتك الرقمية أكثر سهولة ومتعة.
+        </p>
+      </div>
+      <div class="col">
+        <h3>المكتب <div class="underline"><span></span></div>
+        </h3>
+        <p><i class="fa-solid fa-location-dot" style="margin-left:10px"></i> جليم - الاسكندرية </p>
+        <p class="email-id"> <i class="fa-solid fa-envelope" style="margin-left:10px"></i>abc11@hmail.com</p>
+        <h4 class="phone-number"> <i class="fa-solid fa-phone" style="margin-left:10px"></i>+03 393929</h4>
+      </div>
+      <div class="col">
+        <h3>الصفحات <div class="underline"><span></span></div>
+        </h3>
+        <ul>
+          <li class="footer-li"><a href="" class="footer-li-a">الرئيسية</a></li>
+          <li class="footer-li"><a href="" class="footer-li-a">عربة التسوق</a></li>
+          <li class="footer-li"><a href="" class="footer-li-a">من نحن</a></li>
+          <li class="footer-li"><a href="" class="footer-li-a">تواصل</a></li>
+        </ul>
+      </div>
+      <div class="col">
+        <h3>موقع المكتب <div class="underline"><span></span></div>
+        </h3>
+        <div class="map-container">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3162.9234923116764!2d-122.08424968469447!3d37.422065679825115!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x808fb24d8a3d5a39%3A0x57a0c7b39df3c0a9!2sGoogleplex!5e0!3m2!1sen!2sus!4v1622569625971!5m2!1sen!2sus"
+            height="200"
+            style="border:0; border-radius: 4%; box-shadow: 0 0 10px 5px rgb(255 241 241 / 75%); margin-bottom: 20px;"
+            allowfullscreen="" loading="lazy"></iframe>
         </div>
-      </footer>
-    <script src="cart.js"></script>
+        <div class="footer-social-icons" style="width:110%">
+          <i class="fab fa-facebook-f"></i>
+          <i class="fab fa-whatsapp"></i>
+          <i class="fab fa-instagram"></i>
+          <i class="fab fa-tiktok"></i>
+        </div>
+      </div>
+    </div>
+    <hr class="footer-hr">
+    <p class="copyright"><a href="">Issis.dev </a> All rights reserved © </p>
+  </footer>
+
+
+
+  <script>
+    // DROPDOWN LIST 
+    const toggleBtn = document.querySelector('.toggle_btn');
+    const toggleBtnIcon = document.querySelector('.toggle_btn i');
+    const dropDownMenu = document.querySelector('.dropdown_menu');
+
+    toggleBtn.onclick = function () {
+      dropDownMenu.classList.toggle('open');
+
+      // change the menu icon to X mark
+      const isOpen = dropDownMenu.classList.contains('open');
+      toggleBtnIcon.className = isOpen ? 'fa-solid fa-xmark' : 'fa-solid fa-bars';
+    };
+  </script>
+  <script src="cart.js"></script>
 </body>
 
 </html>

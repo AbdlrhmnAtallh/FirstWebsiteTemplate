@@ -2,25 +2,19 @@
 const carouselContainer = document.querySelector('.carouselContainer');
 const carouselItems = document.querySelectorAll('.carouselItem');
 let currentIndex = 0;
-
-function showNextImage() {
-    currentIndex = (currentIndex + 1) % carouselItems.length;
-    carouselContainer.style.transform = `translateX(-${currentIndex * 100}%)`;
-}
-
-setInterval(showNextImage, 3000); // Change image every 3 seconds
+let jsonProducts = []; // to fatch data for cart 
 
 function createProductCard(product) {
     return `
         <div class="card">
             <div class="child-card">
                 <a href="productDetails.html?id=${product.Id}" class="img-link">
-                    <img src="images/${product.ImagePath1}" alt="${product.Name}">
+                    <img src="images/${product.ImagePath1}" alt="${product.Name} id="product-image"">
                 </a>
                 <a href="">
-                    <h3>${product.Name}</h3>
+                    <h3  id="product-name">${product.Name}</h3>
                 </a>
-                <p class="price">${product.Price} ج.م</p>
+                <p class="price" id="product-price">${product.Price} ج.م</p>
                 <p class="end-card">
                     <button onclick="addToCart(${product.Id})">
                         <svg class="cart-left" xmlns="http://www.w3.org/2000/svg" width="16" height="16"
@@ -61,18 +55,83 @@ function displayProducts(products) {
 // Fetch and display products
 fetch('products.json')
     .then(response => response.json())
-    .then(data => displayProducts(data))
+    .then(data => {
+        displayProducts(data);
+        jsonProducts= data;})
     .catch(error => console.error('Error fetching products:', error));
 
-// Function to add product to cart
-function addToCart(productId) {
+// Function to add product to cart  // THIS NEEDS TO ADD BACK <button onclick="addToCart(${product.Id})">
+// function addToCart(productId) {
+//     let cart = JSON.parse(localStorage.getItem('cart')) || [];
+//     let product = cart.find(item => item.id === productId);
+//     if (product) {
+//         product.quantity += 1;
+//     } else {
+//         cart.push({ id: productId, quantity: 1 });
+//     }
+//     localStorage.setItem('cart', JSON.stringify(cart));
+//     alert('Product added to cart');
+// }
+
+function addToCart(id) {
+    // Retrieve the cart from localStorage or initialize it as an empty array if it doesn't exist
     let cart = JSON.parse(localStorage.getItem('cart')) || [];
-    let product = cart.find(item => item.id === productId);
+
+    // Find the product with the given id in the jsonProducts array
+    let product = jsonProducts.find(item => item.Id == id);
+
+    // Check if the product was found
     if (product) {
-        product.quantity += 1;
+        // Extract product details
+        let Id = product.Id;
+        let ImagePath1 = product.ImagePath1;
+        let Name = product.Name;
+        let Price = product.Price;
+
+        // Check if the product is already in the cart
+        let cartProduct = cart.find(item => item.Id == Id);
+
+        if (cartProduct) {
+            // If the product is already in the cart, increment the quantity
+            cartProduct.quantity++;
+        } else {
+            // If the product is not in the cart, add it with quantity 1
+            let quantity = 1;
+            const productViewModel = { Id, ImagePath1, Name, Price, quantity };
+            cart.push(productViewModel);
+        }
+
+        // Save the updated cart array back to localStorage
+        localStorage.setItem('cart', JSON.stringify(cart));
+
+        // Log the cart array and its length for debugging
+        console.log(cart);
+        console.log(cart.length);
     } else {
-        cart.push({ id: productId, quantity: 1 });
+        console.error(`Product with Id ${id} not found.`);
     }
-    localStorage.setItem('cart', JSON.stringify(cart));
-    alert('Product added to cart');
 }
+
+
+
+
+// function addToCart() {
+//     // Get product details
+//     const product = {
+//       image: document.getElementById('product-image').src,
+//       name: document.getElementById('product-name').innerText,
+//       price: document.getElementById('product-price').innerText.replace('Price: $', ''),
+//       quantity: 1
+//     };
+
+//     // Get existing cart data from local storage
+//     let cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+//     // Add product to cart
+//     cart.push(product);
+
+//     // Save updated cart to local storage
+//     localStorage.setItem('cart', JSON.stringify(cart));
+
+//     alert('Product added to cart!');
+//   }
