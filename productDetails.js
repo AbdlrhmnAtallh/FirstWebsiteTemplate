@@ -2,19 +2,15 @@
 const urlParams = new URLSearchParams(window.location.search);
 const productId = urlParams.get('id');
 let related = [];
-// Function to fetch product data by ID
-// function fetchProductById(id) {
-//     return fetch('products.json')
-//         .then(response => response.json())
-//         .then(products => products.find(product => product.Id == id));
-// }
+let jsonProducts = []; 
 
-// temp method 
+
 function fetchProductById(id) {
     return fetch('products.json')
         .then(response => response.json())
         .then(products => {
             related = products; // Assign all products to the related array
+            jsonProducts = products;
             return products.find(product => product.Id == id); // Return the product by ID
         });
 }
@@ -127,17 +123,45 @@ fetchProductById(productId)
 
 
 // Function to add product to cart
-function addToCart(productId) {
+function addToCart(id) {
+    // Retrieve the cart from localStorage or initialize it as an empty array if it doesn't exist
     let cart = JSON.parse(localStorage.getItem('cart')) || [];
-    let product = cart.find(item => item.id === productId);
+    console.log(cart);
+    // Find the product with the given id in the jsonProducts array
+    let product = jsonProducts.find(item => item.Id == id);
+
+    // Check if the product was found
     if (product) {
-        product.quantity += 1;
+        // Extract product details
+        let Id = product.Id;
+        let ImagePath1 = product.ImagePath1;
+        let Name = product.Name;
+        let Price = product.Price;
+
+        // Check if the product is already in the cart
+        let cartProduct = cart.find(item => item.Id == Id);
+
+        if (cartProduct) {
+            // If the product is already in the cart, increment the quantity
+            cartProduct.quantity++;
+        } else {
+            // If the product is not in the cart, add it with quantity 1
+            let quantity = 1;
+            const productViewModel = { Id, ImagePath1, Name, Price, quantity };
+            cart.push(productViewModel);
+        }
+
+        // Save the updated cart array back to localStorage
+        localStorage.setItem('cart', JSON.stringify(cart));
+
+        // Log the cart array and its length for debugging
+        console.log(cart);
+        console.log(cart.length);
     } else {
-        cart.push({ id: productId, quantity: 1 });
+        console.error(`Product with Id ${id} not found.`);
     }
-    localStorage.setItem('cart', JSON.stringify(cart));
-    alert('Product added to cart');
 }
+
 
 // Function to display descriptions
 function displayDescriptions(descriptions) {
