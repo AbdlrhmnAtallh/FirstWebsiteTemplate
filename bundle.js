@@ -155,30 +155,9 @@ function addToCart(id) {
 
         // Save the updated cart array back to localStorage
         localStorage.setItem('cart', JSON.stringify(cart));
-        success();
+        successNotify();
     } else {
         console.error(`Product with Id ${id} not found.`);
-    }
-}
-
-function success() {
-    // Toastr configuration
-    toastr.options = {
-        "closeButton": false,
-        "debug": false,
-        "newestOnTop": false,
-        "progressBar": false,
-        "positionClass": "toast-top-full-width",
-        "preventDuplicates": false,
-        "onclick": null,
-        "showDuration": "300",
-        "hideDuration": "1000",
-        "timeOut": "2000",
-        "extendedTimeOut": "1000",
-        "showEasing": "swing",
-        "hideEasing": "linear",
-        "showMethod": "fadeIn",
-        "hideMethod": "fadeOut"
     }
 }
 // #endregion
@@ -487,3 +466,49 @@ function createFooter(){
   document.body.appendChild(footer);
 }
 createFooter();
+
+// Notification 
+function successNotify(){
+    Command: toastr["success"]("تم اضافة العنصر الي السلة")
+
+toastr.options = {
+  "closeButton": false,
+  "debug": false,
+  "newestOnTop": false,
+  "progressBar": false,
+  "positionClass": "toast-top-right",
+  "preventDuplicates": false,
+  "onclick": null,
+  "showDuration": "300",
+  "hideDuration": "1000",
+  "timeOut": "2000",
+  "extendedTimeOut": "1000",
+  "showEasing": "swing",
+  "hideEasing": "linear",
+  "showMethod": "fadeIn",
+  "hideMethod": "fadeOut"
+}
+}
+
+function confirmRemove(){
+    Command: toastr["info"]("ddssd<br /><br /><button type=\"button\" class=\"btn clear\">Yes</button>")
+
+toastr.options = {
+  "closeButton": false,
+  "debug": false,
+  "newestOnTop": false,
+  "progressBar": false,
+  "positionClass": "toast-top-center",
+  "preventDuplicates": false,
+  "onclick": null,
+  "showDuration": "300",
+  "hideDuration": "1000",
+  "timeOut": 0,
+  "extendedTimeOut": 0,
+  "showEasing": "swing",
+  "hideEasing": "linear",
+  "showMethod": "fadeIn",
+  "hideMethod": "fadeOut",
+  "tapToDismiss": false
+}
+}
