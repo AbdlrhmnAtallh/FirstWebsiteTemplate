@@ -1,17 +1,3 @@
-
-function ll() {
-  const cart = JSON.parse(localStorage.getItem('cart')) || [];
-  console.log(cart.length);
-  for (let i = 0; i < cart.length; i++) {
-    console.log(cart[i].Id);
-    console.log(cart[i].Name);
-    console.log(cart[i].Price);
-    //console.log(cart[i].quantity);
-  }
-}
-
-
-
 function loadCart() {
   const cart = JSON.parse(localStorage.getItem('cart')) || [];
   const cartTable = document.getElementById('cart-table');
@@ -94,6 +80,8 @@ function updateQuantity(productId, newQuantity) {
   document.getElementById('total-price').innerText = `$${totalPrice}`;
 }
 
+
+
 function removeFromCart(productId) {
   let cart = JSON.parse(localStorage.getItem('cart')) || [];
 
@@ -103,7 +91,6 @@ function removeFromCart(productId) {
   // Update localStorage with the new cart array
   localStorage.setItem('cart', JSON.stringify(cart));
   location.reload();
-
 }
 
 
@@ -128,4 +115,5 @@ function sendOrderWhatsApp() {
 
   // Open WhatsApp with the message
   window.open(whatsappUrl, '_blank');
+  localStorage.removeItem('cart');
 }

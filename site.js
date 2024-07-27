@@ -1,7 +1,4 @@
-// caeousel section 
-const carouselContainer = document.querySelector('.carouselContainer');
-const carouselItems = document.querySelectorAll('.carouselItem');
-let currentIndex = 0;
+
 let jsonProducts = []; // to fatch data for cart 
 
 function createProductCard(product) {
@@ -50,8 +47,6 @@ function displayProducts(products) {
     productsArea.innerHTML = products.map(product => createProductCard(product)).join('');
 }
 
-
-
 // Fetch and display products
 fetch('products.json')
     .then(response => response.json())
@@ -60,18 +55,6 @@ fetch('products.json')
         jsonProducts= data;})
     .catch(error => console.error('Error fetching products:', error));
 
-// Function to add product to cart  // THIS NEEDS TO ADD BACK <button onclick="addToCart(${product.Id})">
-// function addToCart(productId) {
-//     let cart = JSON.parse(localStorage.getItem('cart')) || [];
-//     let product = cart.find(item => item.id === productId);
-//     if (product) {
-//         product.quantity += 1;
-//     } else {
-//         cart.push({ id: productId, quantity: 1 });
-//     }
-//     localStorage.setItem('cart', JSON.stringify(cart));
-//     alert('Product added to cart');
-// }
 
 function addToCart(id) {
     // Retrieve the cart from localStorage or initialize it as an empty array if it doesn't exist
@@ -111,27 +94,3 @@ function addToCart(id) {
         console.error(`Product with Id ${id} not found.`);
     }
 }
-
-
-
-
-// function addToCart() {
-//     // Get product details
-//     const product = {
-//       image: document.getElementById('product-image').src,
-//       name: document.getElementById('product-name').innerText,
-//       price: document.getElementById('product-price').innerText.replace('Price: $', ''),
-//       quantity: 1
-//     };
-
-//     // Get existing cart data from local storage
-//     let cart = JSON.parse(localStorage.getItem('cart')) || [];
-
-//     // Add product to cart
-//     cart.push(product);
-
-//     // Save updated cart to local storage
-//     localStorage.setItem('cart', JSON.stringify(cart));
-
-//     alert('Product added to cart!');
-//   }
