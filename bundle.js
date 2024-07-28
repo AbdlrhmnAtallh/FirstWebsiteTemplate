@@ -182,7 +182,7 @@ function findItemById(id, list) {
 function displaySingleProduct(product) {
     if (product) {
         // Image in large size 
-        document.getElementById('featured-image').src = `images/${product.ImagePath1}`;
+        document.getElementById('featured-image').src = `${product.ImagePath1}`;
 
         // Images in small size
         const smallImagesContainer = document.querySelector('.small-Card');
@@ -236,7 +236,7 @@ function displaySingleProduct(product) {
         document.querySelector('.product-info h5').innerHTML = `${product.Price} ج.م`;
         // First and second description 
         document.querySelector('.product-info p.description-main').textContent = product.Description;
-        displayDescriptions(product.dd);
+        displayDescriptions(product.Description2);
 
 
         let matchedRelated = [];
@@ -332,7 +332,7 @@ function CreateCart() {
                     <img src="${product.ImagePath1}" alt="Product Image">
                     <div>
                       <p>${product.Name}</p>
-                      <small>Price: $${product.Price}</small>
+                      <small>السعر: ${product.Price}ج.م</small>
                       <br>
                       <a href="#" onclick="removeFromCart('${product.Id}')">Remove</a>
                     </div>

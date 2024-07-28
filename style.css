@@ -413,9 +413,3 @@ a:hover {
         margin: 0px;
     }
 }
-
-
-
-.dropdown_menu a{ /*override links color */
-    background:#fff;
-  }
