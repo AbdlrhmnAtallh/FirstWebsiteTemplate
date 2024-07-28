@@ -82,7 +82,7 @@ function createProductCard(product) {
         <div class="card">
             <div class="child-card">
                 <a href="productDetails.html?id=${product.Id}" class="img-link">
-                    <img src="images/${product.ImagePath1}" alt="${product.Name} id="product-image"">
+                    <img src="${product.ImagePath1}" alt="${product.Name} id="product-image"">
                 </a>
                 <a href="">
                     <h3  id="product-name">${product.Name}</h3>
@@ -202,7 +202,7 @@ function displaySingleProduct(product) {
         smallImagePaths.forEach(imagePath => {
             if (imagePath) { // Check if imagePath is not null or undefined
                 const imgElement = document.createElement('img');
-                imgElement.src = `images/${imagePath}`;
+                imgElement.src = `${imagePath}`;
                 imgElement.alt = 'image not found';
                 imgElement.className = 'small-Img';
                 smallImagesContainer.appendChild(imgElement);
@@ -329,7 +329,7 @@ function CreateCart() {
             row.innerHTML = `
                 <td>
                   <div class="cart-info">
-                    <img src="images/${product.ImagePath1}" alt="Product Image">
+                    <img src="${product.ImagePath1}" alt="Product Image">
                     <div>
                       <p>${product.Name}</p>
                       <small>Price: $${product.Price}</small>
@@ -400,23 +400,6 @@ function sendOrderWhatsApp() {
     localStorage.removeItem('cart');
 }
 //#endregion
-
-//#region DropDown list 
-    // DROPDOWN LIST 
-    const toggleBtn = document.querySelector('.toggle_btn');
-    const toggleBtnIcon = document.querySelector('.toggle_btn i');
-    const dropDownMenu = document.querySelector('.dropdown_menu');
-
-    toggleBtn.onclick = function () {
-      dropDownMenu.classList.toggle('open');
-
-      // change the menu icon to X mark
-      const isOpen = dropDownMenu.classList.contains('open');
-      toggleBtnIcon.className = isOpen ? 'fa-solid fa-xmark' : 'fa-solid fa-bars';
-    };
-    //#endregion
-
-//#region footer
 
 function createFooter(){
     const footer = document.createElement('footer');
@@ -512,3 +495,128 @@ toastr.options = {
   "tapToDismiss": false
 }
 }
+
+
+
+
+//#region Create Header 
+document.addEventListener('DOMContentLoaded', function() {
+    const headerHTML = `
+      <header>
+        <div class="navbar">
+          <div class="logo"><a href="index.html">logo name</a></div>
+          <ul class="links">
+            <li><a href="index.html">الرئيسيه</a></li>
+            <li><a href="about">الاكثر مبيعا</a></li>
+            <li><a href="productDetails.html">احدث الاضافات</a></li>
+            <li><a href="contact">من نحن</a></li>
+          </ul>
+          <a href="cart.html" class="action_btn">اتصل</a>
+          <div class="quick-links">
+            <a href="#">
+              <i class="fas fa-search" style="margin-left: 15px;" id="search-icon"></i>
+            </a>
+            <input type="text" id="search-input" placeholder="...Search by name" style="display: none; margin-left: 15px;">
+            <a href="cart.html">
+              <i class="fa-solid fa-cart-shopping" style="margin-left: 15px;"></i>
+            </a>
+            <div class="toggle_btn">
+              <i class="fa-solid fa-bars"></i>
+            </div>
+          </div>
+        </div>
+        <div class="dropdown_menu">
+          <li><a href="index.html">الرئيسيه</a></li>
+          <li><a href="about">الاكثر مبيعا</a></li>
+          <li><a href="productDetails.html">احدث الاضافات</a></li>
+          <li><a href="contact">من نحن</a></li>
+          <a href="cart.html" class="action_btn">اتصل</a>
+        </div>
+      </header>
+      <div id="search-results" class="search-results"></div>
+    `;
+  
+    document.body.insertAdjacentHTML('afterbegin', headerHTML);
+  
+    // DROPDOWN LIST 
+    const toggleBtn = document.querySelector('.toggle_btn');
+    const toggleBtnIcon = document.querySelector('.toggle_btn i');
+    const dropDownMenu = document.querySelector('.dropdown_menu');
+  
+    toggleBtn.onclick = function () {
+      dropDownMenu.classList.toggle('open');
+  
+      // change the menu icon to X mark
+      const isOpen = dropDownMenu.classList.contains('open');
+      toggleBtnIcon.className = isOpen ? 'fa-solid fa-xmark' : 'fa-solid fa-bars';
+    };
+  
+    //#region Search 
+    document.getElementById('search-icon').addEventListener('click', function(event) {
+      event.preventDefault(); // Prevent the default action of the anchor tag
+      const searchInput = document.getElementById('search-input');
+      const navbar = document.querySelector('.navbar');
+    
+      if (!navbar.classList.contains('search-active')) {
+        navbar.classList.add('search-active');
+        searchInput.style.display = 'inline-block';
+        searchInput.focus(); // Focus on the input field
+      } else {
+        navbar.classList.remove('search-active');
+        searchInput.style.display = 'none';
+        document.getElementById('search-results').style.display = 'none';
+      }
+    });
+  
+    document.getElementById('search-input').addEventListener('input', function() {
+      const query = this.value.toLowerCase(); // Works for English, may not be needed for Arabic
+      const results = searchDocuments(query);
+      displayResults(results);
+    });
+  
+    document.addEventListener('click', function(event) {
+      const searchInput = document.getElementById('search-input');
+      const searchResults = document.getElementById('search-results');
+      const navbar = document.querySelector('.navbar');
+  
+      if (!searchResults.contains(event.target) && !searchInput.contains(event.target) && !event.target.matches('#search-icon')) {
+        navbar.classList.remove('search-active');
+        searchInput.style.display = 'none';
+        searchResults.style.display = 'none';
+      }
+    });
+  
+    function searchDocuments(query) {
+      return productsArray.filter(doc => doc.Name.includes(query)); // Direct string comparison
+    }
+  
+    function displayResults(results) {
+      const resultsContainer = document.getElementById('search-results');
+      resultsContainer.innerHTML = '';
+  
+      if (results.length === 0) {
+        resultsContainer.innerHTML = '<p>لم يتم العثور علي عناصر مماثلة.</p>';
+        resultsContainer.style.display = 'block';
+        return;
+      }
+  
+      results.forEach(result => {
+        const resultItem = document.createElement('div');
+        resultItem.classList.add('result-item');
+        resultItem.innerHTML = `
+          <a href="productDetails.html?id=${result.Id}">
+            <img src="${result.ImagePath1}" alt="خطأ في تحميل الصورة">
+            <h3>${result.Name}</h3>
+            <p>${result.Price}</p>
+          </a>
+        `;
+        resultsContainer.appendChild(resultItem);
+      });
+  
+      resultsContainer.style.display = 'block';
+    }
+    //#endregion
+  });
+
+//#endregion  
+  

@@ -161,10 +161,6 @@ a:hover {
     max-width: 100% ;
     max-height: 200px;
 }
-
-
-
-
 .cart-left {
     transform: scaleX(-1);
     height: 20px;
@@ -176,7 +172,6 @@ a:hover {
 .card button {
     border: none;
     outline: 0;
-   
     cursor: pointer;
     font-size: 18px;
     text-align: right;
@@ -187,15 +182,12 @@ a:hover {
     padding-bottom: 6px;
     border-radius: 5px;
     /* background-color: #f9f9f9; */ 
-    color: #56b0f2;
+    color: #fff;
+    background: #001e3e;
 }
-
 .card button:hover{
-    color: darkslategray;
-}
-.card svg:hover{
-    fill: darkslategray;
-   
+        background: #007bff;
+        transition: ease-in 0.4s;
 }
 
 @media (max-width: 575.98px) {
@@ -424,3 +416,6 @@ a:hover {
 
 
 
+.dropdown_menu a{ /*override links color */
+    background:#fff;
+  }

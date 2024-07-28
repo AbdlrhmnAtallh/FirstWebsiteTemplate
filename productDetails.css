@@ -135,7 +135,7 @@
   }
   
   button {
-    background: #17696a;
+    background: #001e3e;
     border-radius: 4px;
     padding: 10px 37px;
     border: none;
@@ -144,7 +144,7 @@
   }
   
   button:hover {
-    background: #ff4242;
+    background: #007bff;
     transition: ease-in 0.4s;
   }
   

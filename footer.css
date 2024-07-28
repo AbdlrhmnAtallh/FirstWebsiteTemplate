@@ -3,10 +3,11 @@
 
 footer{
     width: 100%; /* Ensures the footer spans the full width of the viewport */
-    background: linear-gradient(to right, #00093c, #2d0b00);
+    background: linear-gradient(to right, #2c94df, #302525);
+    /* background: linear-gradient(to right, #00093c, #2d0b00); */
     color: #fff;
     padding: 10px 0 30px;
-    border-top-left-radius: 125px;
+    border-top-left-radius: 110px;
     line-height: 20px;
 }
 
@@ -106,6 +107,10 @@ iframe{
 
 .copyright{
     text-align: center;
+    color:#b8b8b8;
+}
+.copyright a{
+color:white ;
 }
 
 .underline{
@@ -142,10 +147,10 @@ iframe{
 
 @keyframes colorChange {
     0% {
-        background: rgb(118, 186, 248);
+        background: rgb(255, 255, 255);
     }
     100% {
-        background:  rgb(66, 84, 252);
+        background:  rgb(108, 122, 255);
     }
 }
 
