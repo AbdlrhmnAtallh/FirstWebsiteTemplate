@@ -84,7 +84,7 @@ function createProductCard(product) {
                 <a href="productDetails.html?id=${product.Id}" class="img-link">
                     <img src="${product.ImagePath1}" alt="${product.Name} id="product-image"">
                 </a>
-                <a href="">
+                <a href="productDetails.html?id=${product.Id}">
                     <h3  id="product-name">${product.Name}</h3>
                 </a>
                 <p class="price" id="product-price">${product.Price} ج.م</p>
@@ -278,21 +278,23 @@ function displaySingleProduct(product) {
 // #region displayDescriptionWithPoints
 // Displays a formatted description on the product details page.
 function displayDescriptions(descriptions) {
-    const container = document.getElementById('description-container');
-    if (container) {
-        descriptions.forEach(description => {
-            const p = document.createElement('p');
-            const span = document.createElement('span');
-            const dotDiv = document.createElement('div');
-            dotDiv.className = 'dot';
-            const textNode = document.createTextNode(description);
-            span.appendChild(dotDiv);
-            span.appendChild(textNode);
-            p.appendChild(span);
-            container.appendChild(p);
-        });
-    }
+  const container = document.getElementById('description-container');
+  if (container) {
+      container.innerHTML = ''; // Clear existing descriptions
+      descriptions.forEach(descriptionObj => {
+          const p = document.createElement('p');
+          const span = document.createElement('span');
+          const dotDiv = document.createElement('div');
+          dotDiv.className = 'dot';
+          const textNode = document.createTextNode(descriptionObj.phrase);
+          span.appendChild(dotDiv);
+          span.appendChild(textNode);
+          p.appendChild(span);
+          container.appendChild(p);
+      });
+  }
 }
+
 //#endregion
 
 // #region initialize Cart page
@@ -407,14 +409,14 @@ function createFooter(){
     <div class="col">
       <img src="images/logo.avif" class="logo-footer">
       <p class="portfolio-p">
-        نحن نقدم لك أحدث الهواتف الذكية من أشهر العلامات التجارية العالمية، بأسعار تنافسية وخدمة ممتازة.استمتع بتجربة تسوق فريدة وممتعة، حيث يمكنك اختيار الجهاز الذي يناسب احتياجاتك وأسلوب حياتكاكتشف مجموعة متنوعة من الاكسسوارات والحلول التقنية الإضافية التي تجعل حياتك الرقمية أكثر سهولة ومتعة.
+        نحن نقدم لك أحدث الهواتف الذكية من أشهر العلامات التجارية العالمية، بأسعار تنافسية وخدمة ممتازة.استمتع بتجربة تسوق فريدة وممتعة، حيث يمكنك اختيار الجهاز الذي يناسب احتياجاتك وأسلوب حياتك اكتشف مجموعة متنوعة من الاكسسوارات والحلول التقنية الإضافية التي تجعل حياتك الرقمية أكثر سهولة ومتعة.
       </p>
     </div>
     <div class="col">
       <h3>المكتب <div class="underline"><span></span></div></h3>
       <p><i class="fa-solid fa-location-dot" style="margin-left:10px"></i> جليم - الاسكندرية </p>
-      <p class="email-id"> <i class="fa-solid fa-envelope" style="margin-left:10px"></i>abc11@hmail.com</p>
-      <h4 class="phone-number"> <i class="fa-solid fa-phone" style="margin-left:10px"></i>+03 393929</h4>
+      <p class="email-id"> <i class="fa-solid fa-envelope" style="margin-left:10px"></i>abdlrhmantt@hmail.com</p>
+      <h4 class="phone-number"> <i class="fa-solid fa-phone" style="margin-left:10px"></i>+201064845771</h4>
     </div>
     <div class="col">
       <h3>الصفحات <div class="underline"><span></span></div></h3>
